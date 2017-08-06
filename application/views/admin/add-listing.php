@@ -50,7 +50,7 @@
 																<legend>Listing Photo</legend>
 																<div data-row-span="1">
 																	<div data-field-span="1">
-																		<input type="file" name="pic" required />
+																		<input type="file" name="pic" accept="image/jpg, image/jpeg, image/png" required />
 																	</div>
 																</div>
 															</fieldset>
