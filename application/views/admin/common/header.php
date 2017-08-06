@@ -27,8 +27,8 @@
 			<!------------------------------>
 			<!-- GLOBAL CSS CONFIGURATION -->
 			<!------------------------------>
-			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>css/lightgallery.min.css">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>css/master.css">
+			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>css/lightgallery.min.css">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>plugins/iview/css/skin/style.css">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>fonts/font-awesome/css/font-awesome.min.css">
@@ -71,6 +71,12 @@
 			<link href="<?=ASSETS_ADMIN_DIR?>css/ie8.css" type="text/css" rel="stylesheet">
 			<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
+
+			<style>
+			#topnav {
+				z-index: 1;
+			}
+			</style>
 		</head>
 
 <?php }else{ ?>
@@ -138,6 +144,7 @@
 			<!-- GLOBAL CSS CONFIGURATION -->
 			<!------------------------------>
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>css/styles.css">
+			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>css/lightgallery.min.css">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>plugins/codeprettifier/prettify.css">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>plugins/dropdown.js/jquery.dropdown.css">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>plugins/progress-skylo/skylo.css">
@@ -168,6 +175,12 @@
 			
 			<style>  
 				.DelBtn{margin-top:1px; height:35px;}
+				#topnav {
+					z-index: 1;
+				}
+				.delete-link {
+				  margin-top: 10px;
+				}
 			</style>
 		</head>
 		

@@ -182,11 +182,11 @@
                                 <div class="demo-gallery">
                                     <ul id="lightgallery" class="list-unstyled row">
                                         <?php if($pic_counter == ''){ ?>
-										<li>No Photos Uploaded yet....</li>
+										<li>There are no photos uploaded yet.</li>
 										<?php }else{ ?>
 										<?php for($l=0; $l < $pic_counter; $l++){ ?>
-										<li class="col-ls-4 col-md-3 col-sm-6 col-xs-12" data-src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
-                                            <a href="">
+										<li class="col-lg-4 col-md-3 col-sm-6 col-xs-12" data-src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
+                                            <a href="#">
                                                 <img class="img-responsive" src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
                                             </a>
                                         </li>
@@ -212,7 +212,7 @@
 									<h1 class="main-block__title"><strong>Download PDF Files Below</strong></h1>
                                     <div class="list-group">
 										<?php if($pdf_counter == ''){ ?>
-										<li>No PDFs Uploaded yet....</li>
+										<li>There are no PDF files uploaded yet.</li>
 										<?php }else{ ?>
 										<?php for($m=0; $m < $pdf_counter; $m++){ ?>
                                         <a href="<?=ASSETS_ADMIN_DIR_FILE?><?php echo $listing_pdf[$m]['pdf']; ?>" class="list-group-item" download><i class="fa fa-file-pdf-o"></i> <?php echo $listing_pdf[$m]['pdf']; ?></a>

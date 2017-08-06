@@ -1,3 +1,4 @@
+
 <?php if($this->uri->segment(1) == 'status'){ ?>
 
 				<footer class="footer">
@@ -77,7 +78,9 @@
 		<!-- end layout-theme -->
 		<!-- SCRIPTS -->
         <script src="<?=ASSETS_ADMIN_DIR?>plugins/jquery/jquery.min.js"></script>
+		<script src="<?=ASSETS_ADMIN_DIR?>js/smooth.scroll.min.js"></script>
         <script src="<?=ASSETS_ADMIN_DIR?>js/jquery.mousewheel.min.js"></script>
+
         <script src="<?=ASSETS_ADMIN_DIR?>js/lightgallery.min.js"></script>
         <script src="<?=ASSETS_ADMIN_DIR?>js/lg-thumbnail.min.js"></script>
         <script src="<?=ASSETS_ADMIN_DIR?>js/lg-fullscreen.min.js"></script>
@@ -97,6 +100,11 @@
 		<!--THEME-->
 		<script src="<?=ASSETS_ADMIN_DIR?>js/wow.min.js"></script>
 		<script src="<?=ASSETS_ADMIN_DIR?>js/custom.js"></script>
+		<script>
+			$(document).ready(function() {
+			    $("#lightgallery").lightGallery();
+			});
+		</script>
 	</body>
 </html>
 
@@ -211,6 +219,14 @@
 			<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 			-->
 			<script src="<?=ASSETS_ADMIN_DIR?>js/jquery-1.10.2.min.js"></script> 								<!-- Load jQuery -->
+			<script src="<?=ASSETS_ADMIN_DIR?>js/smooth.scroll.min.js"></script>
+
+	        <script src="<?=ASSETS_ADMIN_DIR?>js/lightgallery.min.js"></script>
+	        <script src="<?=ASSETS_ADMIN_DIR?>js/lg-thumbnail.min.js"></script>
+	        <script src="<?=ASSETS_ADMIN_DIR?>js/lg-fullscreen.min.js"></script>
+	        <script src="<?=ASSETS_ADMIN_DIR?>js/lg-autoplay.min.js"></script>
+			<script src="<?=ASSETS_ADMIN_DIR?>js/lg-zoom.min.js"></script>
+
 			<script src="<?=ASSETS_ADMIN_DIR?>js/jqueryui-1.10.3.min.js"></script> 								<!-- Load jQueryUI -->
 			<script src="<?=ASSETS_ADMIN_DIR?>js/bootstrap.min.js"></script> 									<!-- Load Bootstrap -->
 			<script src="<?=ASSETS_ADMIN_DIR?>js/enquire.min.js"></script> 										<!-- Load Enquire -->
@@ -243,6 +259,12 @@
 			<script src="<?=ASSETS_ADMIN_DIR?>plugins/gridforms/gridforms/gridforms.js"></script>
 			<script src="<?=ASSETS_ADMIN_DIR?>plugins/dropzone/dropzone.min.js"></script>
 			<!-- End loading page level scripts-->
+			
+			<script>
+				$(document).ready(function() {
+				    $("#lightgallery").lightGallery();
+				});
+			</script>
 			
 			<script>
 				var selector = '.currency';

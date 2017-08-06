@@ -434,8 +434,3 @@ $('.js-filter').on('click', function() {
 // Animated WOW
 /////////////////////////////////////////////////////////////////
 new WOW().init();
-
-
-$(document).ready(function() {
-    $("#lightgallery").lightGallery();
-});

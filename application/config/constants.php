@@ -86,11 +86,11 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 
 // MY PATH CONSTANTS
-define('HTTP_PATH', 'http://' . $_SERVER['SERVER_NAME'].'/LMPS/');
-define('ADMIN_PATH', 'http://' . $_SERVER['SERVER_NAME'].'/LMPS/admin/');
-define('ASSETS_ADMIN_DIR', 'http://' . $_SERVER['SERVER_NAME'].'/LMPS/assets/admin/');
-define('ASSETS_ADMIN_DIR_IMG', 'http://' . $_SERVER['SERVER_NAME'].'/LMPS/assets/admin/img/');
-define('ASSETS_ADMIN_DIR_FILE', 'http://' . $_SERVER['SERVER_NAME'].'/LMPS/assets/admin/files/');
-define('ASSETS_ADMIN_DIR_USER', 'http://' . $_SERVER['SERVER_NAME'].'/LMPS/assets/admin/img/agents/');
-define('ASSETS_ADMIN_DIR_GALLERY', 'http://' . $_SERVER['SERVER_NAME'].'/LMPS/assets/admin/img/gallery/');
-define('ASSETS_ADMIN_DIR_THUMBNAIL', 'http://' . $_SERVER['SERVER_NAME'].'/LMPS/assets/admin/img/gallery/thumb/');
+define('HTTP_PATH', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/');
+define('ADMIN_PATH', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/admin/');
+define('ASSETS_ADMIN_DIR', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/');
+define('ASSETS_ADMIN_DIR_IMG', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/img/');
+define('ASSETS_ADMIN_DIR_FILE', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/files/');
+define('ASSETS_ADMIN_DIR_USER', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/img/agents/');
+define('ASSETS_ADMIN_DIR_GALLERY', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/img/gallery/');
+define('ASSETS_ADMIN_DIR_THUMBNAIL', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/img/gallery/thumb/');

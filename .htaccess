@@ -3,7 +3,7 @@
     RewriteEngine On
 
     # rewritebase added to run locally
-      RewriteBase /LMPS/
+      RewriteBase /LMSP/
 
     # Checks to see if the user is attempting to access a valid file
       RewriteCond %{REQUEST_FILENAME} !-f

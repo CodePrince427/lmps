@@ -33,7 +33,7 @@
 											<div class="panel panel-default" data-widget='{"draggable": "false"}'>
 												<div class="panel-heading">
 													<!--<h2>Slider photos and Listing Price</h2>-->
-													<h2>Listing Price & Photo</h2>
+													<h2>Listing Price and Photo</h2>
 													<div class="panel-ctrls" data-actions-container="" data-action-collapse='{"target": ".panel-body"}'></div>
 												</div>
 												<div class="panel-body">
@@ -329,88 +329,30 @@
 														
 														<?php if($pic_counter == ''){ ?>
 														<ul class="attachments">
-															<span>No Photos uploaded yet....</span>
+															<span>There are no photos uploaded yet.</span>
 														</ul>
 														<?php }else{ ?>
-														<?php for($n=0; $n < $pic_counter; $n++){ ?>
-														<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-															<div class="uploaded-image">
-																<ul class="list-inline">
-																	<li data-toggle="modal" data-target="#ModalGallery<?php echo $listing_gallery[$n]['id']; ?>">
-																		<a href="#Gallery<?php echo $listing_gallery[$n]['id']; ?>" data-slide-to="<?php echo $n; ?>">
-																			<img src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$n]['pic']; ?>" class="img-responsive" />
-																		</a>																
-																	</li>
-																</ul>
-																<a href="#DelGallery<?php echo $listing_gallery[$n]['id']; ?>" data-toggle="modal"><i class="fa fa-trash"></i> Delete Image</a>
-															</div>
+														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+							                                <div class="demo-gallery uploaded-image">
+							                                    <ul id="lightgallery" class="list-unstyled row">
+							                                        <?php if($pic_counter == ''){ ?>
+																	<li>There are no photos uploaded yet.</li>
+																	<?php }else{ ?>
+																	<?php for($l=0; $l < $pic_counter; $l++){ ?>
+																	<li class="col-ls-4 col-md-3 col-sm-6 col-xs-12" data-src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
+							                                            <a href="">
+							                                                <img class="img-responsive" src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
+							                                            </a>
+																		<a href="#DelGallery<?php echo $listing_gallery[$l]['id']; ?>" class="delete-link" data-toggle="modal" data-target=".delete-modal"><i class="fa fa-trash"></i> Delete Image</a>
+							                                        </li>
+																	<?php } } ?>
+							                                    </ul>
+							                                </div>
+
 														</div>
 														
-														<!-- Gallery Modal -->
-														<div id="ModalGallery<?php echo $listing_gallery[$n]['id']; ?>" class="modal fade" role="dialog">
-															<div class="modal-dialog">
-
-																<!-- Modal content -->
-																<div class="modal-content">
-																	<div class="modal-header">
-																		<button type="button" class="close" data-dismiss="modal">&times;</button>
-																		<h4 class="modal-title">Gallery Image</h4>
-																	</div>
-																	<div class="modal-body">
-																		<!-- Carousel -->
-																		<div id="Gallery<?php echo $listing_gallery[$n]['id']; ?>" class="carousel slide" data-interval="false" data-ride="carousel">
-																			<ol class="carousel-indicators">
-																				<?php $m = 1; foreach($listing_gallery as $gallery):$ol_class = ($m == 1) ? 'active' : ''; ?>
-																				<li data-target="#Gallery" data-slide-to="<?php echo $m; ?>" class="<?php echo $ol_class; ?>"></li>
-																				<?php $m++; endforeach; ?>
-																			</ol>
-
-																			<div class="carousel-inner">
-																				<?php $m = 1; foreach($listing_gallery as $gallery):$item_class = ($m == 1) ? 'item active' : 'item'; ?>
-																					<div class="<?php echo $item_class; ?>">
-																						<img src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $gallery['pic'];?>" />
-																					</div>
-																					<?php $m++; endforeach; ?>
-																			</div>
-
-																			<a class="left carousel-control" href="#Gallery<?php echo $listing_gallery[$n]['id']; ?>" role="button" data-slide="prev">
-																				<span class="glyphicon glyphicon-chevron-left"></span>
-																			</a>
-																			<a class="right carousel-control" href="#Gallery<?php echo $listing_gallery[$n]['id']; ?>" role="button" data-slide="next">
-																				<span class="glyphicon glyphicon-chevron-right"></span>
-																			</a>
-																		</div>
-																	</div>
-																	<div class="modal-footer">
-																		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-																	</div>
-																</div>
-
-															</div>
-														</div>
-
-														<!----------------------->
-														<!-- DELETE LINK MODAL -->
-														<!----------------------->
-														<div id="DelGallery<?php echo $listing_gallery[$n]['id']; ?>" class="modal fade" tabindex="-1" role="dialog">
-															<div class="modal-dialog modal-lg">
-																<div class="modal-content">
-																	<div class="modal-header">
-																		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-																		<h2 class="modal-title">Delete this Image?</h2>
-																	</div>
-																	<div class="modal-body">
-																		<h4>Are you Sure you want to Delete this Image? This action can Not be Undone.</h4>
-																	</div>
-																	<div class="modal-footer">
-																		<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-																		<a href="<?php echo base_url();?>admin/delete_listing_gallery/<?php echo $listing_gallery[$n]['id']; ?>/<?php echo $this->uri->segment(3);?>" class="btn btn-sm btn-raised btn-danger DelBtn">Delete</a>
-																	</div>
-																</div>
-															</div>
-														</div>
-														
-														<?php } } ?>
+														<?php } ?>
 
 													</div>
 												</div>
@@ -432,7 +374,7 @@
 															<div class="bs-component">
 																<div class="list-group">
 																	<?php if($pdf_counter == ''){ ?>
-																	<span>No PDFs uploaded yet....</span>
+																	<span>There are no PDF files uploaded yet.</span>
 																	<?php }else{ ?>
 																	<?php for($o=0; $o < $pdf_counter; $o++){ ?>
 																	<div class="col-lg-4">
@@ -541,3 +483,21 @@
 				<div class="extrabar-underlay"></div>
 			</div> <!-- end #layout-static -->
 		</div> <!-- end #wrapper -->
+
+		<div class="modal fade delete-modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h2 class="modal-title">Delete this image?</h2>
+					</div>
+					<div class="modal-body">
+						<h4>Are you sure you want to delete this image? This action can not be undone.</h4>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-raised btn-danger">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
