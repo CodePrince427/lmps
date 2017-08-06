@@ -8,15 +8,11 @@
 			<div id="wrapper">
 				<div id="sliderpro1" class="slider-pro main-slider">
 					<div class="sp-slides">
-						<?php for($i=0; $i < $pic_counter; $i++){ ?>
+						<?php for($i=0; $i < 3; $i++){ ?>
 						<div class="sp-slide">
                             <div class="image-wrap">
-								<?php if($pic_counter != 0){ ?>
-                                <img src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$i]['pic']; ?>" alt="img" />
-								<?php }elseif($pic_counter == 0){ ?>
-                                <img src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_pic[0]['pics']; ?>" alt="img" />
-								<?php } ?>
-                            </div>
+								<img src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_slider[$i]['pic']; ?>" alt="img" />
+							</div>
 							<div class="item-wrap sp-layer sp-padding" data-horizontal="100"  data-vertical="300"
 								data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
 								<div class="main-slider__inner text-left">

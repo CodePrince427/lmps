@@ -20,10 +20,10 @@
 				$data['listing'] = $result1;
 				$data['listing_code'] = $listing_code;
 				
-				//Listing Pic
+				//Listing Slider Pics
 				$listing_id = $data['listing'][0]['id'];
-				$result2 = $this->status_model->get_listing_pic($listing_id);
-				$data['listing_pic'] = $result2;
+				$result2 = $this->status_model->get_listing_slider($listing_id);
+				$data['listing_slider'] = $result2;
 				
 				//Listing Gallery
 				$result3 = $this->status_model->get_listing_gallery($listing_id);

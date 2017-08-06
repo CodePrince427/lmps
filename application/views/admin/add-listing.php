@@ -47,10 +47,12 @@
 														</div>
 														<div class="col-md-6">
 															<fieldset>
-																<legend>Upload Photo</legend>
+																<legend>Listing Photo</legend>
+																<div data-row-span="1">
 																	<div data-field-span="1">
-																		<input type="file" name="pic" class="" accept="image/*" required />
+																		<input type="file" name="pic" required />
 																	</div>
+																</div>
 															</fieldset>
 														</div>
 													</div>

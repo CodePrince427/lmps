@@ -95,7 +95,7 @@
 																		<legend>Video URL (optional):</legend>
 																		<div data-row-span="1">
 																			<div data-field-span="1">
-																				<input type="text" name="video" placeholder="YouTube URL link..." required />
+																				<input type="text" name="video" placeholder="YouTube URL link..." />
 																			</div>
 																		</div>
 																	</fieldset>
