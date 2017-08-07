@@ -334,16 +334,16 @@
 														<?php }else{ ?>
 														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-							                                <div class="demo-gallery uploaded-image">
+							                                <div class="demo-gallery">
 							                                    <ul id="lightgallery" class="list-unstyled row">
 							                                        <?php if($pic_counter == ''){ ?>
 																	<li>There are no photos uploaded yet.</li>
 																	<?php }else{ ?>
 																	<?php for($l=0; $l < $pic_counter; $l++){ ?>
 																	<li class="col-ls-4 col-md-3 col-sm-6 col-xs-12" data-src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
-							                                            <a href="">
+							                                            <div class="uploaded-image">
 							                                                <img class="img-responsive" src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
-							                                            </a>
+							                                            </div>
 																		<a href="#DelGallery<?php echo $listing_gallery[$l]['id']; ?>" class="delete-link" data-toggle="modal" data-target=".delete-modal"><i class="fa fa-trash"></i> Delete Image</a>
 							                                        </li>
 																	<?php } } ?>
@@ -398,57 +398,6 @@
 																		<div class="list-group-separator"></div>
 																	</div>
 																	
-																	<!-- Edit PDF Modal -->
-																	<div id="EditPDF<?php echo $listing_pdf[$o]['id']; ?>" class="modal fade" role="dialog">
-																		<div class="modal-dialog">
-
-																			<!-- Modal content-->
-																			<div class="modal-content">
-																				<div class="modal-header">
-																					<button type="button" class="close" data-dismiss="modal">&times;</button>
-																					<h4 class="modal-title">Rename PDF</h4>
-																				</div>
-																				<div class="modal-body">
-																					<form action="<?php echo base_url();?>admin/rename_listing_pdf/<?php echo $listing_pdf[$o]['id']; ?>/<?php echo $this->uri->segment(3);?>" method="POST">
-																						<p>Are You Sure You Want to Rename this PDF?</p>
-																						<div class="form-line">
-																							<input type="text" class="form-control" name="pdf" value="<?php echo $listing_pdf[$o]['pdf']; ?>" autofocus />
-																						</div><br/>
-																						<div class="modal-footer">
-																							<button type="submit" class="btn btn-danger">Rename</button>
-																							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-																						</div>
-																					</form>
-																				</div>
-																			</div>
-
-																		</div>
-																	</div>
-
-																	<!-- Delete PDF Modal -->
-																	<div id="DelPDF<?php echo $listing_pdf[$o]['id']; ?>" class="modal fade" role="dialog">
-																		<div class="modal-dialog">
-
-																			<!-- Modal content-->
-																			<div class="modal-content">
-																				<div class="modal-header">
-																					<button type="button" class="close" data-dismiss="modal">&times;</button>
-																					<h4 class="modal-title">Delete PDF</h4>
-																				</div>
-																				<div class="modal-body">
-																					<p>Are You Sure You Want to Delete this PDF?</p>
-																					<div class="form-group">
-																					</div>
-																				</div>
-																				<div class="modal-footer">
-																					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-																					<a href="<?php echo base_url();?>admin/delete_listing_pdf/<?php echo $listing_pdf[$o]['id']; ?>/<?php echo $this->uri->segment(3);?>" class="btn btn-danger">Delete</a>
-																				</div>
-																			</div>
-
-																		</div>
-																	</div>
-																	
 																	<?php } } ?>
 																</div>
 															</div>
@@ -501,3 +450,51 @@
 				</div>
 			</div>
 		</div>
+																	
+		<!-- Edit PDF Modal -->
+		<!-- <div id="EditPDF<?php echo $listing_pdf[$o]['id']; ?>" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Rename PDF</h4>
+					</div>
+					<div class="modal-body">
+						<form action="<?php echo base_url();?>admin/rename_listing_pdf/<?php echo $listing_pdf[$o]['id']; ?>/<?php echo $this->uri->segment(3);?>" method="POST">
+							<p>Are You Sure You Want to Rename this PDF?</p>
+							<div class="form-line">
+								<input type="text" class="form-control" name="pdf" value="<?php echo $listing_pdf[$o]['pdf']; ?>" autofocus />
+							</div><br/>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-danger">Rename</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="DelPDF<?php echo $listing_pdf[$o]['id']; ?>" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Delete PDF</h4>
+					</div>
+					<div class="modal-body">
+						<p>Are You Sure You Want to Delete this PDF?</p>
+						<div class="form-group">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<a href="<?php echo base_url();?>admin/delete_listing_pdf/<?php echo $listing_pdf[$o]['id']; ?>/<?php echo $this->uri->segment(3);?>" class="btn btn-danger">Delete</a>
+					</div>
+				</div>
+
+			</div>
+		</div> -->

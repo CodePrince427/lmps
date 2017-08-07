@@ -27137,6 +27137,15 @@ table.dataTable thead th.sorting_desc:after {
     margin: 10px 0;
     min-height: 200px !important;
 }
+.uploaded-image {
+  overflow: hidden;
+}
+.uploaded-image {
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+}
 .uploaded-image a {
     font-size: 13px;
 }
