@@ -958,7 +958,7 @@ img.pull-left {
 .list-services:hover .list-services__inner, .list-services-active .list-services__inner {
 	border-left-color: #999;
 }
-.list-services-active::after, .list-services-active:hover::after {
+/*.list-services-active::after, .list-services-active:hover::after {
 	content: "";
     position: absolute;
     left: 45%;
@@ -969,7 +969,7 @@ img.pull-left {
 	margin-top: 173px;
     display: block !important;
     width: 0;
-}
+}*/
 .list-services-disabled {
 	position: relative;
 	padding: 22px 22px 22px 0;

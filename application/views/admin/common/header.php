@@ -32,6 +32,15 @@
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>plugins/iview/css/skin/style.css">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>fonts/font-awesome/css/font-awesome.min.css">
+			<style>
+				.item-wrap.sp-layer,
+				.item-wrap.sp-layer .custom-caption {
+					width: 100%;
+				}
+.wrap-section-border a:hover {
+  text-decoration: none;
+}
+			</style>
 		</head>
 	
 <?php }elseif($this->uri->segment(2) == ''){ ?>
