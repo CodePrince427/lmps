@@ -334,16 +334,16 @@
 														<?php }else{ ?>
 														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-							                                <div class="demo-gallery uploaded-image">
+							                                <div class="demo-gallery">
 							                                    <ul id="lightgallery" class="list-unstyled row">
 							                                        <?php if($pic_counter == ''){ ?>
 																	<li>There are no photos uploaded yet.</li>
 																	<?php }else{ ?>
 																	<?php for($l=0; $l < $pic_counter; $l++){ ?>
 																	<li class="col-ls-4 col-md-3 col-sm-6 col-xs-12" data-src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
-							                                            <a href="">
+							                                            <div class="uploaded-image">
 							                                                <img class="img-responsive" src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
-							                                            </a>
+							                                            </div>
 																		<a id="<?php echo $listing_gallery[$l]['id']; ?>" href="#DelGallery" class="delete-link" data-toggle="modal">
 																		<i class="fa fa-trash"></i> Delete Image</a>
 							                                        </li>
