@@ -32,6 +32,15 @@
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>plugins/iview/css/skin/style.css">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>fonts/font-awesome/css/font-awesome.min.css">
+			<style>
+				.item-wrap.sp-layer,
+				.item-wrap.sp-layer .custom-caption {
+					width: 100%;
+				}
+.wrap-section-border a:hover {
+  text-decoration: none;
+}
+			</style>
 		</head>
 	
 <?php }elseif($this->uri->segment(2) == ''){ ?>
@@ -143,7 +152,6 @@
 			<!------------------------------>
 			<!-- GLOBAL CSS CONFIGURATION -->
 			<!------------------------------>
-			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>css/styles.css">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>css/lightgallery.min.css">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>plugins/codeprettifier/prettify.css">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>plugins/dropdown.js/jquery.dropdown.css">
@@ -172,6 +180,7 @@
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>plugins/dropzone/css/dropzone.css">
 			<link href="<?=ASSETS_ADMIN_DIR?>plugins/summernote/dist/summernote.css" type="text/css" rel="stylesheet">
 			<link href="<?=ASSETS_ADMIN_DIR?>css/jquery-ui.css" rel="stylesheet" type="text/css" />							<!-- JQuery UI Autocomplete Search -->
+			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>css/styles.css">
 			
 			<style>  
 				.DelBtn{margin-top:1px; height:35px;}

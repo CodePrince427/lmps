@@ -135,7 +135,7 @@
 														</div>
 														<div data-row-span="1">
 															<div data-field-span="1" class="checkbox">
-																<label><input type="checkbox" name="sms" required />
+																<label><input type="checkbox" name="sms">
 																<span>Send status updates via SMS</span></label>
 															</div>
 														</div>
