@@ -344,7 +344,8 @@
 							                                            <a href="">
 							                                                <img class="img-responsive" src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
 							                                            </a>
-																		<a href="#DelGallery<?php echo $listing_gallery[$l]['id']; ?>" class="delete-link" data-toggle="modal" data-target=".delete-modal"><i class="fa fa-trash"></i> Delete Image</a>
+																		<a id="<?php echo $listing_gallery[$l]['id']; ?>" href="#DelGallery" class="delete-link" data-toggle="modal">
+																		<i class="fa fa-trash"></i> Delete Image</a>
 							                                        </li>
 																	<?php } } ?>
 							                                    </ul>
@@ -386,10 +387,10 @@
 																				<a href="<?=ASSETS_ADMIN_DIR_FILE?><?php echo $listing_pdf[$o]['pdf']; ?>"
 																				class="list-group-item-heading" download><?php echo $listing_pdf[$o]['pdf']; ?></a>
 																				<div class="action-secondary">
-																					<a href="#EditPDF<?php echo $listing_pdf[$o]['id']; ?>" data-toggle="modal">
+																					<a id="<?php echo $listing_pdf[$o]['id']; ?>" href="#EditPDF" class="delete-link" data-toggle="modal" title="<?php echo $listing_pdf[$o]['pdf']; ?>">
 																						<i class="material-icons">edit</i>
 																					</a>
-																					<a href="#DelPDF<?php echo $listing_pdf[$o]['id']; ?>" data-toggle="modal">
+																					<a id="<?php echo $listing_pdf[$o]['id']; ?>" href="#DelPDF" class="delete-link" data-toggle="modal">
 																					<i class="material-icons">delete</i>
 																					</a>
 																				</div>
@@ -397,58 +398,6 @@
 																		</div>
 																		<div class="list-group-separator"></div>
 																	</div>
-																	
-																	<!-- Edit PDF Modal -->
-																	<div id="EditPDF<?php echo $listing_pdf[$o]['id']; ?>" class="modal fade" role="dialog">
-																		<div class="modal-dialog">
-
-																			<!-- Modal content-->
-																			<div class="modal-content">
-																				<div class="modal-header">
-																					<button type="button" class="close" data-dismiss="modal">&times;</button>
-																					<h4 class="modal-title">Rename PDF</h4>
-																				</div>
-																				<div class="modal-body">
-																					<form action="<?php echo base_url();?>admin/rename_listing_pdf/<?php echo $listing_pdf[$o]['id']; ?>/<?php echo $this->uri->segment(3);?>" method="POST">
-																						<p>Are You Sure You Want to Rename this PDF?</p>
-																						<div class="form-line">
-																							<input type="text" class="form-control" name="pdf" value="<?php echo $listing_pdf[$o]['pdf']; ?>" autofocus />
-																						</div><br/>
-																						<div class="modal-footer">
-																							<button type="submit" class="btn btn-danger">Rename</button>
-																							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-																						</div>
-																					</form>
-																				</div>
-																			</div>
-
-																		</div>
-																	</div>
-
-																	<!-- Delete PDF Modal -->
-																	<div id="DelPDF<?php echo $listing_pdf[$o]['id']; ?>" class="modal fade" role="dialog">
-																		<div class="modal-dialog">
-
-																			<!-- Modal content-->
-																			<div class="modal-content">
-																				<div class="modal-header">
-																					<button type="button" class="close" data-dismiss="modal">&times;</button>
-																					<h4 class="modal-title">Delete PDF</h4>
-																				</div>
-																				<div class="modal-body">
-																					<p>Are You Sure You Want to Delete this PDF?</p>
-																					<div class="form-group">
-																					</div>
-																				</div>
-																				<div class="modal-footer">
-																					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-																					<a href="<?php echo base_url();?>admin/delete_listing_pdf/<?php echo $listing_pdf[$o]['id']; ?>/<?php echo $this->uri->segment(3);?>" class="btn btn-danger">Delete</a>
-																				</div>
-																			</div>
-
-																		</div>
-																	</div>
-																	
 																	<?php } } ?>
 																</div>
 															</div>
@@ -465,6 +414,76 @@
 						</div> <!-- end .page-content -->
 					</div> <!-- end .static-content -->
 
+					<!-- Delete Gallery Modal -->
+					<div id="DelGallery" class="modal fade" tabindex="-1" role="dialog">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h2 class="modal-title">Delete this image?</h2>
+								</div>
+								<div class="modal-body">
+									<h4>Are you sure you want to delete this image? This action can not be undone.</h4>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<a id="DelGalleryBtn" href="#" class="btn btn-sm btn-raised btn-danger DelBtn">Delete</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Edit PDF Modal -->
+					<div id="EditPDF" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+
+							<!-- Modal content-->
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Rename PDF</h4>
+								</div>
+								<div class="modal-body">
+									<form name="RenameForm" action="/" method="POST">
+										<p>Are You Sure You Want to Rename this PDF?</p>
+										<div class="form-line">
+											<input id="rename" type="text" class="form-control" name="pdf" value="" autofocus />
+										</div><br/>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											<button type="submit" class="btn btn-sm btn-raised btn-danger DelBtn">Rename</button>
+										</div>
+									</form>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Delete PDF Modal -->
+					<div id="DelPDF" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+
+							<!-- Modal content-->
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Delete PDF</h4>
+								</div>
+								<div class="modal-body">
+									<p>Are You Sure You Want to Delete this PDF?</p>
+									<div class="form-group">
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<a id="DelPDFBtn" href="#" class="btn btn-sm btn-raised btn-danger DelBtn">Delete</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					
 					<!----------------->
 					<!-- FOOTER INFO -->
 					<!----------------->
@@ -483,21 +502,3 @@
 				<div class="extrabar-underlay"></div>
 			</div> <!-- end #layout-static -->
 		</div> <!-- end #wrapper -->
-
-		<div class="modal fade delete-modal" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h2 class="modal-title">Delete this image?</h2>
-					</div>
-					<div class="modal-body">
-						<h4>Are you sure you want to delete this image? This action can not be undone.</h4>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						<button type="button" class="btn btn-raised btn-danger">Delete</button>
-					</div>
-				</div>
-			</div>
-		</div>

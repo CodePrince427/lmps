@@ -319,6 +319,83 @@
 			</script>
 			<!-- End loading page level scripts-->
 			<?php } ?>
+						
+			
+			<!------------>
+			<!-- MODALS -->
+			<!------------>
+			
+			<!-- Delete LISTING ID -->
+			<script>
+				jQuery(".delete-link").click(function() {
+					var id = this.id;
+					var link = "<?php echo base_url();?>admin/delete_listing/"+id;
+					$('#DelListingBtn').attr('href',link);
+				});
+			</script>
+			
+			<!-- Delete AGENT ID -->
+			<script>
+				jQuery(".delete-link").click(function() {
+					var id = this.id;
+					var link = "<?php echo base_url();?>admin/delete_agent/"+id;
+					$('#DelAgentBtn').attr('href',link);
+				});
+			</script>
+			
+			<!-- Delete LISTING STEP ID -->
+			<script>
+				jQuery(".delete-link").click(function() {
+					var id = this.id;
+					var link = "<?php echo base_url();?>admin/delete_step/"+id+"/1";
+					$('#DelLStepBtn').attr('href',link);
+				});
+			</script>
+			
+			<!-- Delete CLOSING STEP ID -->
+			<script>
+				jQuery(".delete-link").click(function() {
+					var id = this.id;
+					var link = "<?php echo base_url();?>admin/delete_step/"+id+"/2";
+					$('#DelCStepBtn').attr('href',link);
+				});
+			</script>
+			
+			<!-- Delete GALLERY ID -->
+			<script>
+				jQuery(".delete-link").click(function() {
+					var id = this.id;
+
+					//Pass to a Function
+					testFunction(id);
+				});
+
+				function testFunction(param) {
+					var id = param;
+					var link = "<?php echo base_url();?>admin/delete_listing_gallery/"+id+"/<?php echo $this->uri->segment(3);?>";
+					$('#DelGalleryBtn').attr('href',link);
+				}
+			</script>
+			
+			<!-- Delete PDF ID -->
+			<script>
+				jQuery(".delete-link").click(function() {
+					var id = this.id;
+					var link = "<?php echo base_url();?>admin/delete_listing_pdf/"+id+"/<?php echo $this->uri->segment(3);?>";
+					$('#DelPDFBtn').attr('href',link);
+				});
+			</script>
+			
+			<!-- Rename PDF ID -->
+			<script>
+				jQuery(".delete-link").click(function() {
+					var id = this.id;
+					var pdf = this.title;
+					var link = "<?php echo base_url();?>admin/rename_listing_pdf/"+id+"/<?php echo $this->uri->segment(3);?>";
+					$('#rename').attr('value',pdf);
+					document['RenameForm'].action = link;
+				});
+			</script>
 			
 		</body>
 	</html>

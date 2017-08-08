@@ -51,31 +51,9 @@
 																<td><?php echo $listing_steps[$i]['step_name']; ?></td>
 																<td class="actions">
 																	<a href="<?php echo base_url();?>admin/edit_step/<?php echo  $listing_steps[$i]['id']; ?>/1" class="btn btn-primary btn-raised btn-sm"><i class="material-icons">edit</i> Edit</a>
-																	<a href="#DelModal<?php echo  $listing_steps[$i]['id']; ?>" class="btn btn-danger btn-raised btn-sm" data-toggle="modal"><i class="material-icons">delete</i> Delete</a>
+																	<a id="<?php echo  $listing_steps[$i]['id']; ?>" href="#DelModal1" class="btn btn-danger btn-raised btn-sm delete-link" data-toggle="modal"><i class="material-icons">delete</i> Delete</a>
 																</td>
 															</tr>
-															
-															<!----------------------->
-															<!-- DELETE LINK MODAL -->
-															<!----------------------->
-															<div id="DelModal<?php echo  $listing_steps[$i]['id']; ?>" class="modal fade" tabindex="-1" role="dialog">
-																<div class="modal-dialog modal-lg">
-																	<div class="modal-content">
-																		<div class="modal-header">
-																			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-																			<h2 class="modal-title">Delete this Step?</h2>
-																		</div>
-																		<div class="modal-body">
-																			<h4>Are you Sure you want to Delete This Step? This action can Not be Undone.</h4>
-																		</div>
-																		<div class="modal-footer">
-																			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-																			<a href="<?php echo base_url();?>admin/delete_step/<?php echo $listing_steps[$i]['id']; ?>/1" class="btn btn-sm btn-raised btn-danger DelBtn">DELETE</a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															
 															<?php } ?>
 														</tbody>
 													</table>
@@ -111,31 +89,9 @@
 																<td><?php echo $closing_steps[$j]['step_name']; ?></td>
 																<td class="actions">
 																	<a href="<?php echo base_url();?>admin/edit_step/<?php echo  $closing_steps[$j]['id']; ?>/2" class="btn btn-primary btn-raised btn-sm"><i class="material-icons">edit</i> Edit</a>
-																	<a href="#DelModal<?php echo  $closing_steps[$j]['id']; ?>" class="btn btn-danger btn-raised btn-sm" data-toggle="modal"><i class="material-icons">delete</i> Delete</a>
+																	<a id="<?php echo  $closing_steps[$j]['id']; ?>" href="#DelModal2" class="btn btn-danger btn-raised btn-sm delete-link" data-toggle="modal"><i class="material-icons">delete</i> Delete</a>
 																</td>
 															</tr>
-															
-															<!----------------------->
-															<!-- DELETE LINK MODAL -->
-															<!----------------------->
-															<div id="DelModal<?php echo  $closing_steps[$j]['id']; ?>" class="modal fade" tabindex="-1" role="dialog">
-																<div class="modal-dialog modal-lg">
-																	<div class="modal-content">
-																		<div class="modal-header">
-																			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-																			<h2 class="modal-title">Delete this Step?</h2>
-																		</div>
-																		<div class="modal-body">
-																			<h4>Are you Sure you want to Delete This Step? This action can Not be Undone.</h4>
-																		</div>
-																		<div class="modal-footer">
-																			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-																			<a href="<?php echo base_url();?>admin/delete_step/<?php echo $closing_steps[$j]['id']; ?>/2" class="btn btn-sm btn-raised btn-danger DelBtn">DELETE</a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-		
 															<?php } ?>
 														</tbody>
 													</table>
@@ -149,6 +105,48 @@
 						</div> <!-- end .page-content -->
 					</div> <!-- end .static-content -->
 
+					<!-------------------------->
+					<!-- DELETE LISTING MODAL -->
+					<!-------------------------->
+					<div id="DelModal1" class="modal fade" tabindex="-1" role="dialog">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h2 class="modal-title">Delete this Step?</h2>
+								</div>
+								<div class="modal-body">
+									<h4>Are you Sure you want to Delete This Step? This action can Not be Undone.</h4>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+									<a id="DelLStepBtn" href="#" class="btn btn-sm btn-raised btn-danger DelBtn">DELETE</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-------------------------->
+					<!-- DELETE CLOSING MODAL -->
+					<!-------------------------->
+					<div id="DelModal2" class="modal fade" tabindex="-1" role="dialog">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h2 class="modal-title">Delete this Step?</h2>
+								</div>
+								<div class="modal-body">
+									<h4>Are you Sure you want to Delete This Step? This action can Not be Undone.</h4>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+									<a id="DelCStepBtn" href="#" class="btn btn-sm btn-raised btn-danger DelBtn">DELETE</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
 					<!----------------->
 					<!-- FOOTER INFO -->
 					<!----------------->

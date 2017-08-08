@@ -56,31 +56,9 @@
 																	<td><?php echo $agent_list[$i]['agent_cell']; ?></td>
 																	<td class="actions">
 																		<a href="<?php echo base_url();?>admin/edit_agent/<?php echo $agent_list[$i]['agent_id'];?>" class="btn btn-primary btn-raised btn-sm"><i class="material-icons">edit</i> Edit</a>
-																		<a href="#DelModal<?php echo $agent_list[$i]['agent_id'];?>" class="btn btn-danger btn-raised btn-sm" data-toggle="modal"><i class="material-icons">delete</i> Delete</a>
+																		<a id="<?php echo $agent_list[$i]['agent_id'];?>" href="#DelModal" class="btn btn-danger btn-raised btn-sm delete-link" data-toggle="modal"><i class="material-icons">delete</i> Delete</a>
 																	</td>
 																</tr>
-																
-																<!----------------------->
-																<!-- DELETE LINK MODAL -->
-																<!----------------------->
-																<div id="DelModal<?php echo $agent_list[$i]['agent_id'];?>" class="modal fade" tabindex="-1" role="dialog">
-																	<div class="modal-dialog modal-lg">
-																		<div class="modal-content">
-																			<div class="modal-header">
-																				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-																				<h2 class="modal-title">Delete this Agent?</h2>
-																			</div>
-																			<div class="modal-body">
-																				<h4>Are you Sure you want to Delete This Agent? This action can Not be Undone.</h4>
-																			</div>
-																			<div class="modal-footer">
-																				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-																				<a href="<?php echo base_url();?>admin/delete_agent/<?php echo $agent_list[$i]['agent_id'];?>" class="btn btn-sm btn-raised btn-danger DelBtn">DELETE</a>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																
 																<?php } ?>
 															</tbody> <!-- end .listings -->
 														</table> <!-- end #example -->
@@ -95,7 +73,28 @@
 							</div> <!-- end .container-fluid -->
 						</div> <!-- end .page-content -->
 					</div> <!-- end .static-content -->
-
+					
+					<!----------------------->
+					<!-- DELETE LINK MODAL -->
+					<!----------------------->
+					<div id="DelModal" class="modal fade" tabindex="-1" role="dialog">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h2 class="modal-title">Delete this Agent?</h2>
+								</div>
+								<div class="modal-body">
+									<h4>Are you Sure you want to Delete This Agent? This action can Not be Undone.</h4>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+									<a id="DelAgentBtn" href="#" class="btn btn-sm btn-raised btn-danger DelBtn">DELETE</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
 					<!----------------->
 					<!-- FOOTER INFO -->
 					<!----------------->
