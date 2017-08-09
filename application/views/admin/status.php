@@ -38,7 +38,7 @@
 					<div class="bg-inner">
 						<div class="container">
 							<div class="row">
-								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 									<div class="main-block text-center">
 										<div class="main-block__label">your agent</div>
 										<div class="decor-1 center-block"></div>
@@ -50,7 +50,7 @@
                                         </div>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 									<div class="main-block text-center">
 										<div class="main-block__label">property details</div>
 										<div class="decor-1 center-block"></div>
@@ -61,8 +61,8 @@
                                             <p class="agent-contact"><?php echo $listing[0]['zipcode']; ?></p>
                                         </div>
 									</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<br><br>
+									<br><br>
 									<div class="main-block text-center">
 										<div class="main-block__label">seller details</div>
 										<div class="decor-1 center-block"></div>
