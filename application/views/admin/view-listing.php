@@ -43,7 +43,7 @@
 																<legend>Enter the Listing Price</legend>
 																<div data-row-span="1">
 																	<div data-field-span="1">
-																		<input type="text" name="price" data-v-min="0" data-n-bracket="(,)" data-a-sign="$ " class="currency" placeholder="Price..." value="<?php echo $listing[0]['price']; ?>" autofocus />
+																		<input type="text" name="price" data-v-min="0" data-n-bracket="(,)" data-a-sign="$ " class="currency" placeholder="Price..." value="<?php echo intval($listing[0]['price']); ?>" autofocus>
 																	</div>
 																</div>
 															</fieldset>
@@ -344,8 +344,12 @@
 							                                            <div class="uploaded-image">
 							                                                <img class="img-responsive" src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
 							                                            </div>
+<<<<<<< Updated upstream
 																		<a id="<?php echo $listing_gallery[$l]['id']; ?>" href="#DelGallery" class="delete-link" data-toggle="modal">
 																		<i class="fa fa-trash"></i> Delete Image</a>
+=======
+																		<a id="<?php echo $listing_gallery[$l]['id']; ?>" href="#DelGallery" class="delete-link" data-toggle="modal"><i class="fa fa-trash"></i> Delete Image</a>
+>>>>>>> Stashed changes
 							                                        </li>
 																	<?php } } ?>
 							                                    </ul>
