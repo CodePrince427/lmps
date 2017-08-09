@@ -150,7 +150,9 @@
 												<section>
 													<?php echo $listing_steps[$k]['content']; ?>
 													<br>
+													<?php if($listing_steps[$k]['video'] != ''){ ?>
 													<iframe width="560px" height="315px" src="<?php echo $listing_steps[$k]['video']; ?>?autoplay=0&amp;showinfo=0" class="tut-video" frameborder="0" allowfullscreen=""></iframe>
+													<?php }else{ echo ""; } ?>
 												</section>
 											</div>
 											<?php } ?>
