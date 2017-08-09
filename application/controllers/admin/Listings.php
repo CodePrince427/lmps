@@ -327,7 +327,7 @@
 				//Dropzone - PDF
 				if(!empty($_FILES)){
 					$tempFile = $_FILES['file']['tmp_name'];
-					$fileName = substr(sha1(rand(000,9999)),0,7).$_FILES['file']['name'];
+					$fileName = $_FILES['file']['name'];
 					$targetPath = getcwd().'/assets/admin/files/';
 					$targetFile = $targetPath.$fileName;
 					move_uploaded_file($tempFile,$targetFile);

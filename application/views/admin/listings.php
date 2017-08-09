@@ -45,6 +45,7 @@
 																</tr>
 															</thead>
 															<tbody class="listings">
+																<?php if($listing_list != ''){ ?>
 																<?php for($i=0; $i < count($listing_list); $i++){ ?>
 																<tr>
 																	<td style="width:100px;max-width:100px;word-wrap:break-word;">
@@ -59,7 +60,7 @@
 																		<a id="<?php echo $listing_list[$i]['listing_id'];?>" href="#DelModal" class="btn btn-danger btn-raised btn-sm delete-link" data-toggle="modal"><i class="material-icons">delete</i> Delete</a>
 																	</td>
 																</tr>
-																<?php } ?>
+																<?php } }else{ echo ""; } ?>
 															</tbody> <!-- end .listings -->
 														</table> <!-- end #example -->
 													</div> <!-- end .table-responsive -->

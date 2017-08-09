@@ -27,6 +27,7 @@
 			<!------------------------------>
 			<!-- GLOBAL CSS CONFIGURATION -->
 			<!------------------------------>
+			<link type='text/css' href='http://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500' rel='stylesheet'>
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>css/master.css">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>css/lightgallery.min.css">
 			<link rel="stylesheet" href="<?=ASSETS_ADMIN_DIR?>plugins/iview/css/skin/style.css">
@@ -37,9 +38,9 @@
 				.item-wrap.sp-layer .custom-caption {
 					width: 100%;
 				}
-.wrap-section-border a:hover {
-  text-decoration: none;
-}
+				.wrap-section-border a:hover {
+				  text-decoration: none;
+				}
 			</style>
 		</head>
 	
