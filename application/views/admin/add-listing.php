@@ -184,6 +184,7 @@
 																<select id="process" name="process" required >
 																	<option value="">-- Please choose from the drop down --</option>
 																	<option value="Listing Process">Listing Process</option>
+																	<option value="Closing Process">Closing Process</option>
 																</select>
 															</div>
 														</div>
