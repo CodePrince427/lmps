@@ -377,6 +377,15 @@
 				}
 			</script>
 			
+			<!-- Delete Slider ID -->
+			<script>
+				jQuery(".delete-link").click(function() {
+					var id = this.id;
+					var link = "<?php echo base_url();?>admin/delete_listing_slider/"+id+"/<?php echo $this->uri->segment(3);?>";
+					$('#DelSliderBtn').attr('href',link);
+				});
+			</script>
+			
 			<!-- Delete PDF ID -->
 			<script>
 				jQuery(".delete-link").click(function() {

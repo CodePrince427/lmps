@@ -92,5 +92,6 @@ define('ASSETS_ADMIN_DIR', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/adm
 define('ASSETS_ADMIN_DIR_IMG', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/img/');
 define('ASSETS_ADMIN_DIR_FILE', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/files/');
 define('ASSETS_ADMIN_DIR_USER', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/img/agents/');
+define('ASSETS_ADMIN_DIR_SLIDER', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/img/sliders/');
 define('ASSETS_ADMIN_DIR_GALLERY', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/img/gallery/');
 define('ASSETS_ADMIN_DIR_THUMBNAIL', 'http://' . $_SERVER['SERVER_NAME'].'/LMSP/assets/admin/img/gallery/thumb/');

@@ -80,12 +80,14 @@ $route['admin/add_listing'] = 'admin/listings/add_listing';
 $route['admin/insert_listing'] = 'admin/listings/insert_listing';
 $route['admin/add_files/(:any)'] = 'admin/listings/add_listing_files';
 $route['admin/insert_pdf/(:any)'] = 'admin/listings/listing_pdf';
+$route['admin/insert_slider/(:any)'] = 'admin/listings/listing_slider';
 $route['admin/insert_gallery/(:any)'] = 'admin/listings/listing_gallery';
 $route['admin/edit_listing/(:any)'] = 'admin/listings/edit_listing';
 $route['admin/update_listing/(:any)'] = 'admin/listings/update_listing';
 $route['admin/delete_listing/(:any)'] = 'admin/listings/delete_listing';
 $route['admin/rename_listing_pdf/(:any)/(:any)'] = 'admin/listings/rename_listing_pdf';
 $route['admin/delete_listing_pdf/(:any)/(:any)'] = 'admin/listings/delete_listing_pdf';
+$route['admin/delete_listing_slider/(:any)/(:any)'] = 'admin/listings/delete_listing_slider';
 $route['admin/delete_listing_gallery/(:any)/(:any)'] = 'admin/listings/delete_listing_gallery';
 
 //Listing Steps

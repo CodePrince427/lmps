@@ -8,10 +8,10 @@
 			<div id="wrapper">
 				<div id="sliderpro1" class="slider-pro main-slider">
 					<div class="sp-slides">
-						<?php for($i=0; $i < 3; $i++){ ?>
+						<?php for($i=0; $i < $slider_counter; $i++){ ?>
 						<div class="sp-slide">
                             <div class="image-wrap">
-								<img src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_slider[$i]['pic']; ?>" alt="img" />
+								<img src="<?=ASSETS_ADMIN_DIR_SLIDER?><?php echo $listing_slider[$i]['pic']; ?>" alt="img" />
 							</div>
 							<div class="item-wrap sp-layer sp-padding" data-horizontal="100"  data-vertical="300"
 								data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
@@ -25,7 +25,7 @@
                                         <br>
 										<span class="main-slider__subtitle title-mask"><?php echo $listing[0]['city']; ?>, <?php echo $listing[0]['state']; ?></span>
                                         <br>
-                                        <span class="main-slider__price title-mask">$<?php echo $listing[0]['price'].".00"; ?></span>
+                                        <span class="main-slider__price title-mask">$ <?php echo intval($listing[0]['price']).".00"; ?></span>
 									</div>
 								</div>
 							</div>

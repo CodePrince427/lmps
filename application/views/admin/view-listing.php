@@ -291,6 +291,21 @@
 									
 									</form>
 									
+									<!-- Upload Slider, Gallery & PDF -->
+									<div class="row">
+										<div class="col-md-12">
+											<div class="panel panel-default" data-widget='{"draggable": "false"}'>
+												<div class="panel-heading">
+													<h2>Upload slider photos</h2>
+													<div class="panel-ctrls" data-actions-container="" data-action-collapse='{"target": ".panel-body"}'></div>
+												</div>
+												<div class="panel-body">
+													<form action="<?php echo base_url();?>admin/insert_slider/<?php echo $this->uri->segment(3);?>" id="SliderUpload" class="dropzone" method="POST" enctype="multipart/form-data"></form>
+												</div>
+											</div>
+										</div>
+									</div>
+									
 									<div class="row">
 										<div class="col-md-6">
 											<div class="panel panel-default" data-widget='{"draggable": "false"}'>
@@ -316,7 +331,42 @@
 											</div>
 										</div>
 									</div> <!-- end .row -->
-
+									
+									<!-- Uploaded Slider -->
+									<div class="row">
+										<div class="col-md-12">
+											<div class="panel panel-default" data-widget='{"draggable": "false"}'>
+												<div class="panel-heading">
+													<h2>Uploaded Slider photos</h2>
+													<div class="panel-ctrls" data-actions-container="" data-action-collapse='{"target": ".panel-body"}'></div>
+												</div>
+												<div class="panel-body">
+													<div class="row">
+														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							                                <div class="demo-gallery">
+							                                    <ul id="slidergallery" class="list-unstyled row">
+							                                        <?php if($slider_counter == ''){ ?>
+																	<li>There are no slider photos uploaded yet.</li>
+																	<?php }else{ ?>
+																	<?php for($n=0; $n < $slider_counter; $n++){ ?>
+																	<li class="col-ls-4 col-md-3 col-sm-6 col-xs-12" data-src="<?=ASSETS_ADMIN_DIR_SLIDER?><?php echo $listing_slider[$n]['pic'] ?>">
+							                                            <div class="uploaded-image">
+							                                                <img class="img-responsive" src="<?=ASSETS_ADMIN_DIR_SLIDER?><?php echo $listing_slider[$n]['pic'] ?>">
+							                                            </div>
+																		<a id="<?php echo $listing_slider[$n]['id']; ?>" href="#DelSlider" class="delete-link" data-toggle="modal">
+																		<i class="fa fa-trash"></i> Delete Image</a>
+							                                        </li>
+																	<?php } } ?>
+							                                    </ul>
+							                                </div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div> <!-- end .row -->
+									
+									<!-- Uploaded Gallery -->
 									<div class="row">
 										<div class="col-md-12">
 											<div class="panel panel-default" data-widget='{"draggable": "false"}'>
@@ -326,41 +376,31 @@
 												</div>
 												<div class="panel-body">
 													<div class="row">
-														
-														<?php if($pic_counter == ''){ ?>
-														<ul class="attachments">
-															<span>There are no photos uploaded yet.</span>
-														</ul>
-														<?php }else{ ?>
 														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
 							                                <div class="demo-gallery">
 							                                    <ul id="lightgallery" class="list-unstyled row">
 							                                        <?php if($pic_counter == ''){ ?>
 																	<li>There are no photos uploaded yet.</li>
 																	<?php }else{ ?>
-																	<?php for($l=0; $l < $pic_counter; $l++){ ?>
-																	<li class="col-ls-4 col-md-3 col-sm-6 col-xs-12" data-src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
+																	<?php for($o=0; $o < $pic_counter; $o++){ ?>
+																	<li class="col-ls-4 col-md-3 col-sm-6 col-xs-12" data-src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$o]['pic'] ?>">
 							                                            <div class="uploaded-image">
-							                                                <img class="img-responsive" src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$l]['pic'] ?>">
+							                                                <img class="img-responsive" src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$o]['pic'] ?>">
 							                                            </div>
-																		<a id="<?php echo $listing_gallery[$l]['id']; ?>" href="#DelGallery" class="delete-link" data-toggle="modal">
+																		<a id="<?php echo $listing_gallery[$o]['id']; ?>" href="#DelGallery" class="delete-link" data-toggle="modal">
 																		<i class="fa fa-trash"></i> Delete Image</a>
 							                                        </li>
 																	<?php } } ?>
 							                                    </ul>
 							                                </div>
-
 														</div>
-														
-														<?php } ?>
-
 													</div>
 												</div>
 											</div>
 										</div>
 									</div> <!-- end .row -->
 
+									<!-- Uploaded PDF -->
 									<div class="row">
 										<div class="col-md-12">
 											<div class="panel panel-default" data-widget='{"draggable": "false"}'>
@@ -377,20 +417,20 @@
 																	<?php if($pdf_counter == ''){ ?>
 																	<span>There are no PDF files uploaded yet.</span>
 																	<?php }else{ ?>
-																	<?php for($o=0; $o < $pdf_counter; $o++){ ?>
+																	<?php for($p=0; $p < $pdf_counter; $p++){ ?>
 																	<div class="col-lg-4">
 																		<div class="list-group-item">
 																			<div class="row-action-primary">
 																				<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
 																			</div>
 																			<div class="row-content" style="height:50px;">
-																				<a href="<?=ASSETS_ADMIN_DIR_FILE?><?php echo $listing_pdf[$o]['pdf']; ?>"
-																				class="list-group-item-heading" download><?php echo $listing_pdf[$o]['pdf']; ?></a>
+																				<a href="<?=ASSETS_ADMIN_DIR_FILE?><?php echo $listing_pdf[$p]['pdf']; ?>"
+																				class="list-group-item-heading" download><?php echo $listing_pdf[$p]['pdf']; ?></a>
 																				<div class="action-secondary">
-																					<a id="<?php echo $listing_pdf[$o]['id']; ?>" href="#EditPDF" class="delete-link" data-toggle="modal" title="<?php echo $listing_pdf[$o]['pdf']; ?>">
+																					<a id="<?php echo $listing_pdf[$p]['id']; ?>" href="#EditPDF" class="delete-link" data-toggle="modal" title="<?php echo $listing_pdf[$p]['pdf']; ?>">
 																						<i class="material-icons">edit</i>
 																					</a>
-																					<a id="<?php echo $listing_pdf[$o]['id']; ?>" href="#DelPDF" class="delete-link" data-toggle="modal">
+																					<a id="<?php echo $listing_pdf[$p]['id']; ?>" href="#DelPDF" class="delete-link" data-toggle="modal">
 																					<i class="material-icons">delete</i>
 																					</a>
 																				</div>
@@ -414,16 +454,35 @@
 						</div> <!-- end .page-content -->
 					</div> <!-- end .static-content -->
 
+					<!-- Delete Slider Modal -->
+					<div id="DelSlider" class="modal fade" tabindex="-1" role="dialog">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h2 class="modal-title">Delete Slider Image</h2>
+								</div>
+								<div class="modal-body">
+									<h4>Are you Sure you Want to Delete this Slider Image? This action can Not be Undone.</h4>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<a id="DelSliderBtn" href="#" class="btn btn-sm btn-raised btn-danger DelBtn">Delete</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
 					<!-- Delete Gallery Modal -->
 					<div id="DelGallery" class="modal fade" tabindex="-1" role="dialog">
 						<div class="modal-dialog modal-lg">
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-									<h2 class="modal-title">Delete this image?</h2>
+									<h2 class="modal-title">Delete Gallery Image</h2>
 								</div>
 								<div class="modal-body">
-									<h4>Are you sure you want to delete this image? This action can not be undone.</h4>
+									<h4>Are you Sure you Want to Delete this Image? This action can Not be Undone.</h4>
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

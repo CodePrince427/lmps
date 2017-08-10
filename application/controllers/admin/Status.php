@@ -19,11 +19,12 @@
 			}else{
 				$data['listing'] = $result1;
 				$data['listing_code'] = $listing_code;
-				
-				//Listing Slider Pics
 				$listing_id = $data['listing'][0]['id'];
+				
+				//Listing Slider
 				$result2 = $this->status_model->get_listing_slider($listing_id);
 				$data['listing_slider'] = $result2;
+				$data['slider_counter'] = count($result2);
 				
 				//Listing Gallery
 				$result3 = $this->status_model->get_listing_gallery($listing_id);

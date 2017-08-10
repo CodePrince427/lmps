@@ -7,6 +7,7 @@
 			$this->users_table = 'users';
 			$this->pdfs_table = 'listing_pdfs';
 			$this->pics_table = 'listing_pics';
+			$this->sliders_table = 'listing_slider';
 			$this->gallery_table = 'listing_gallery';
 		}
 		
@@ -212,6 +213,58 @@
 			
 			$this->db->where('listing_id',$listing_id);
 			$result2 = $this->db->delete($this->gallery_table);
+		}
+		
+		
+		
+		/*
+		/*******
+		**SLIDER
+		********
+		*/
+		//Listing Get Slider
+		function get_listing_slider($slider_id){
+			$this->db->select('*');
+			$this->db->from($this->sliders_table);
+			$this->db->where('id',$slider_id);
+			$query = $this->db->get();
+			$result = $query->result_array();
+			return $result;
+		}
+		
+		//Listing Slider Counter
+		function listing_slider_counter($listing_id){
+			$this->db->select('*');
+			$this->db->from($this->sliders_table);
+			$this->db->where('listing_id',$listing_id);
+			$query = $this->db->get();
+			$result = $query->num_rows();
+			return $result;
+		}
+		
+		//Listing Slider Single Delete
+		function delete_listing_slider($slider_id){
+			$this->db->where('id',$slider_id);
+			$result = $this->db->delete($this->sliders_table);
+			return $result;
+		}
+		
+		//Listing Slider Full Delete
+		function delete_listing_sliders($listing_id,$counter){
+			$this->db->select('pic');
+			$this->db->from($this->sliders_table);
+			$this->db->where('listing_id',$listing_id);
+			$query = $this->db->get();
+			$result1 = $query->result_array();
+			
+			for($i=0;$i<$counter;$i++){
+				$slider = $result1[$i]['pic'];
+				$path = getcwd().'/assets/admin/img/sliders/'.$slider;
+				unlink($path);
+			}
+			
+			$this->db->where('listing_id',$listing_id);
+			$result2 = $this->db->delete($this->sliders_table);
 		}
 		
 	}

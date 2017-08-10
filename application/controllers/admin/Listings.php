@@ -89,6 +89,11 @@
 				$data['listing_gallery'] = $result13;
 				$data['pic_counter'] = count($result13);
 				
+				//Slider
+				$result14 = $this->status_model->get_listing_slider($listing_id);
+				$data['listing_slider'] = $result14;
+				$data['slider_counter'] = count($result14);
+				
 				//Views
 				$this->load->view('admin/common/header');
 				$this->load->view('admin/view-listing',$data);
@@ -385,6 +390,48 @@
 			}
 		}
 		
+		//Slider - For Loop Not Needed :)
+		function listing_slider(){
+			if($this->session->userdata('log_in') == ''){
+				redirect('admin');
+			}else{
+				$listing_id = $this->uri->segment(3);
+				
+				//Dropzone - Slider
+				if(!empty($_FILES)){
+					$tempFile1 = $_FILES['file']['tmp_name'];
+					$origFile1 = $_FILES['file']['name'];
+					
+					$ext = pathinfo($origFile1, PATHINFO_EXTENSION);
+					if($ext == 'png'){
+						$fileName1 = substr(sha1(rand(000,9999)),0,7).$_FILES['file']['name'];
+						$targetPath1 = getcwd().'/assets/admin/img/sliders/';
+						$targetFile1 = $targetPath1.$fileName1;
+						move_uploaded_file($tempFile1,$targetFile1);
+						
+						$data_listing_gallery['listing_id'] = $listing_id;
+						$data_listing_gallery['pic'] = $fileName1;
+						
+						$this->load->database(); // load database
+						$this->db->insert('listing_slider',array('listing_id' => $listing_id,'pic' => $fileName1));						
+					}else{
+						$image = imagecreatefromjpeg($tempFile1);
+						$fileName1 = substr(sha1(rand(000,9999)),0,7).$_FILES['file']['name'];
+						$targetPath1 = getcwd().'/assets/admin/img/sliders/';
+						$CompressedFile1 = $targetPath1.$fileName1;
+						move_uploaded_file($tempFile1,$CompressedFile1);
+						
+						$data_listing_gallery['listing_id'] = $listing_id;
+						$data_listing_gallery['pic'] = $fileName1;
+						
+						$this->load->database(); // load database
+						$this->db->insert('listing_slider',array('listing_id' => $listing_id,'pic' => $fileName1));
+					}
+				}
+				redirect('admin/edit_listing/'.$listing_id.'');
+			}
+		}
+		
 		//Listing PDF Rename
 		function rename_listing_pdf(){
 			if($this->session->userdata('log_in') == ''){
@@ -452,6 +499,24 @@
 			}
 		}
 		
+		//Listing Slider Delete
+		function delete_listing_slider(){
+			if($this->session->userdata('log_in') == ''){
+				redirect('admin');
+			}else{
+				$slider_id = $this->uri->segment(3);
+				$listing_id = $this->uri->segment(4);
+				//Slider
+				$result1 = $this->listings_model->get_listing_slider($slider_id);
+				$slider = $result1[0]['pic'];
+				$path = getcwd().'/assets/admin/img/sliders/'.$slider;
+				unlink($path);
+				//Record
+				$result2 = $this->listings_model->delete_listing_slider($slider_id);
+				redirect('admin/edit_listing/'.$listing_id);
+			}
+		}
+		
 		//Listing Delete
 		function delete_listing(){
 			if($this->session->userdata('log_in') == ''){
@@ -470,13 +535,18 @@
 				$gallery_counter = $result2;
 				$result3 = $this->listings_model->delete_listing_galleries($listing_id,$gallery_counter);
 				
+				//Slider
+				$result4 = $this->listings_model->listing_slider_counter($listing_id);
+				$slider_counter = $result4;
+				$result5 = $this->listings_model->delete_listing_sliders($listing_id,$slider_counter);
+				
 				//Pdf
-				$result4 = $this->listings_model->listing_pdf_counter($listing_id);
-				$pdf_counter = $result4;
-				$result5 = $this->listings_model->delete_listing_pdfs($listing_id,$pdf_counter);
+				$result6 = $this->listings_model->listing_pdf_counter($listing_id);
+				$pdf_counter = $result6;
+				$result7 = $this->listings_model->delete_listing_pdfs($listing_id,$pdf_counter);
 				
 				//Record
-				$result6 = $this->listings_model->delete_listing($listing_id);
+				$result8 = $this->listings_model->delete_listing($listing_id);
 				redirect('admin/listings');
 			}
 		}

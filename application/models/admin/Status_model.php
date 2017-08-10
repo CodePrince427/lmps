@@ -8,6 +8,7 @@
 			$this->sellers_table = 'sellers';
 			$this->pdfs_table = 'listing_pdfs';
 			$this->pics_table = 'listing_pics';
+			$this->sliders_table = 'listing_slider';
 			$this->gallery_table = 'listing_gallery';
 		}
 		
@@ -22,10 +23,8 @@
 		
 		function get_listing_slider($listing_id){
 			$this->db->select('*');
-			$this->db->from($this->gallery_table);
+			$this->db->from($this->sliders_table);
 			$this->db->where('listing_id',$listing_id);
-			$this->db->order_by('id','RANDOM');
-			$this->db->limit(3);
 			$query = $this->db->get();
 			$result = $query->result_array();
 			return $result;

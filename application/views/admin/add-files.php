@@ -50,7 +50,22 @@
 												</div>
 											</div>
 										</div>
-									</div> <!-- end .row -->
+									</div>
+									
+									<div class="row">
+										<div class="col-md-12">
+											<div class="panel panel-default" data-widget='{"draggable": "false"}'>
+												<div class="panel-heading">
+													<h2>Upload slider photos</h2>
+													<div class="panel-ctrls" data-actions-container="" data-action-collapse='{"target": ".panel-body"}'></div>
+												</div>
+												<div class="panel-body">
+													<form action="<?php echo base_url();?>admin/insert_slider/<?php echo $this->uri->segment(3);?>" id="SliderUpload" class="dropzone" method="POST" enctype="multipart/form-data"></form>
+												</div>
+											</div>
+										</div>
+									</div>
+									
 									<div class="row">
 										<div class="col-md-12">
 											<div class="panel panel-default" data-widget='{"draggable": "false"}'>
