@@ -191,6 +191,9 @@
 				.delete-link {
 				  margin-top: 10px;
 				}
+				.dust {
+					padding: 0 15px;
+				}
 			</style>
 		</head>
 		

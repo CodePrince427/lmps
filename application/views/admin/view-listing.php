@@ -346,7 +346,7 @@
 							                                <div class="demo-gallery">
 							                                    <ul id="slidergallery" class="list-unstyled row">
 							                                        <?php if($slider_counter == ''){ ?>
-																	<li>There are no slider photos uploaded yet.</li>
+																	<li class="dust">There are no slider photos uploaded yet.</li>
 																	<?php }else{ ?>
 																	<?php for($n=0; $n < $slider_counter; $n++){ ?>
 																	<li class="col-ls-4 col-md-3 col-sm-6 col-xs-12" data-src="<?=ASSETS_ADMIN_DIR_SLIDER?><?php echo $listing_slider[$n]['pic'] ?>">
@@ -380,7 +380,7 @@
 							                                <div class="demo-gallery">
 							                                    <ul id="lightgallery" class="list-unstyled row">
 							                                        <?php if($pic_counter == ''){ ?>
-																	<li>There are no photos uploaded yet.</li>
+																	<li class="dust">There are no photos uploaded yet.</li>
 																	<?php }else{ ?>
 																	<?php for($o=0; $o < $pic_counter; $o++){ ?>
 																	<li class="col-ls-4 col-md-3 col-sm-6 col-xs-12" data-src="<?=ASSETS_ADMIN_DIR_GALLERY?><?php echo $listing_gallery[$o]['pic'] ?>">
