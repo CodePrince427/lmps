@@ -263,6 +263,7 @@
 			<script>
 				$(document).ready(function() {
 				    $("#lightgallery").lightGallery();
+				    $("#slidergalleryadmin").lightGallery();
 				});
 			</script>
 			

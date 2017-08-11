@@ -344,7 +344,7 @@
 													<div class="row">
 														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							                                <div class="demo-gallery">
-							                                    <ul id="slidergallery" class="list-unstyled row">
+							                                    <ul id="slidergalleryadmin" class="list-unstyled row">
 							                                        <?php if($slider_counter == ''){ ?>
 																	<li class="dust">There are no slider photos uploaded yet.</li>
 																	<?php }else{ ?>
