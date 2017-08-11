@@ -418,7 +418,7 @@
 																	<span>There are no PDF files uploaded yet.</span>
 																	<?php }else{ ?>
 																	<?php for($p=0; $p < $pdf_counter; $p++){ ?>
-																	<div class="col-lg-4">
+																	<div class="col-lg-4" style="height:100px;">
 																		<div class="list-group-item">
 																			<div class="row-action-primary">
 																				<i class="fa fa-file-pdf-o" aria-hidden="true"></i>

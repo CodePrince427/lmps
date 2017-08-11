@@ -108,6 +108,36 @@
 	</body>
 </html>
 
+<?php }elseif($this->uri->segment(1) == 'admin' AND $this->uri->segment(2) == '' OR $this->uri->segment(1) == 'code'){ ?>
+
+			<script src="<?=ASSETS_ADMIN_DIR?>js/jquery-1.10.2.min.js"></script> 								<!-- Load jQuery -->
+			<script src="<?=ASSETS_ADMIN_DIR?>js/smooth.scroll.min.js"></script>
+
+	        <script src="<?=ASSETS_ADMIN_DIR?>js/lightgallery.min.js"></script>
+	        <script src="<?=ASSETS_ADMIN_DIR?>js/lg-thumbnail.min.js"></script>
+	        <script src="<?=ASSETS_ADMIN_DIR?>js/lg-fullscreen.min.js"></script>
+	        <script src="<?=ASSETS_ADMIN_DIR?>js/lg-autoplay.min.js"></script>
+			<script src="<?=ASSETS_ADMIN_DIR?>js/lg-zoom.min.js"></script>
+
+			<script src="<?=ASSETS_ADMIN_DIR?>js/jqueryui-1.10.3.min.js"></script> 								<!-- Load jQueryUI -->
+			<script src="<?=ASSETS_ADMIN_DIR?>js/bootstrap.min.js"></script> 									<!-- Load Bootstrap -->
+			<script src="<?=ASSETS_ADMIN_DIR?>js/enquire.min.js"></script> 										<!-- Load Enquire -->
+			<script src="<?=ASSETS_ADMIN_DIR?>plugins/velocityjs/velocity.min.js"></script>						<!-- Load Velocity for Animated Content -->
+			<script src="<?=ASSETS_ADMIN_DIR?>plugins/velocityjs/velocity.ui.min.js"></script>
+			<script src="<?=ASSETS_ADMIN_DIR?>plugins/progress-skylo/skylo.js"></script> 						<!-- Skylo -->
+			<script src="<?=ASSETS_ADMIN_DIR?>plugins/wijets/wijets.js"></script>     							<!-- Wijet -->
+			<script src="<?=ASSETS_ADMIN_DIR?>plugins/sparklines/jquery.sparklines.min.js"></script> 			<!-- Sparkline -->
+			<script src="<?=ASSETS_ADMIN_DIR?>plugins/codeprettifier/prettify.js"></script> 					<!-- Code Prettifier  -->
+			<script src="<?=ASSETS_ADMIN_DIR?>plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js"></script>  	<!-- Bootstrap Tabdrop -->
+			<script src="<?=ASSETS_ADMIN_DIR?>plugins/nanoScroller/js/jquery.nanoscroller.min.js"></script> 	<!-- nano scroller -->
+			<script src="<?=ASSETS_ADMIN_DIR?>plugins/dropdown.js/jquery.dropdown.js"></script> 				<!-- Fancy Dropdowns -->
+			<script src="<?=ASSETS_ADMIN_DIR?>plugins/bootstrap-material-design/js/material.min.js"></script>	<!-- Bootstrap Material -->
+			<script src="<?=ASSETS_ADMIN_DIR?>plugins/bootstrap-material-design/js/ripples.min.js"></script> 	<!-- Bootstrap Material -->
+			<script src="<?=ASSETS_ADMIN_DIR?>js/application.js"></script>
+			<script src="<?=ASSETS_ADMIN_DIR?>demo/demo.js"></script>
+			<script src="<?=ASSETS_ADMIN_DIR?>demo/demo-switcher.js"></script>
+			<!-- End loading site level scripts -->
+			
 <?php }else{ ?>
 
 			<!------------------------->
