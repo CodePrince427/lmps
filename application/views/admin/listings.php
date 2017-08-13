@@ -38,6 +38,7 @@
 															<thead>
 																<tr>
 																	<th>Preview image</th>
+																	<th>Listing Code</th>
 																	<th>Street address</th>
 																	<th>Seller full name(s)</th>
 																	<th>Agent full name</th>
@@ -51,6 +52,7 @@
 																	<td style="width:100px;max-width:100px;word-wrap:break-word;">
 																		<img src="<?=ASSETS_ADMIN_DIR_GALLERY?>
 																		<?php echo $listing_list[$i]['pics']; ?>" alt=""></td>
+																	<td><?php echo $listing_list[$i]['code']; ?></td>
 																	<td><?php echo $listing_list[$i]['address']; ?></td>
 																	<td><?php echo $listing_list[$i]['seller_name']; ?></td>
 																	<td><?php echo $listing_list[$i]['agent_name']; ?></td>

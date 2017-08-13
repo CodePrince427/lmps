@@ -101,9 +101,20 @@
 		<script src="<?=ASSETS_ADMIN_DIR?>js/wow.min.js"></script>
 		<script src="<?=ASSETS_ADMIN_DIR?>js/custom.js"></script>
 		<script>
+			//Light Gallery
 			$(document).ready(function() {
 			    $("#lightgallery").lightGallery();
 			});
+			
+			//Currency Converter
+			//for(i = 0; i < 2; i++) {
+			//var value = "<?php echo intval($listing["+i+"]['price']); ?>";
+			var value = <?php echo $listing[0]['price']; ?>;
+			var num = '$ ' + value.toLocaleString();
+			var span = document.getElementById("CurrencyPrice");
+			span.textContent = num;
+			//alert(num);
+			//}
 		</script>
 	</body>
 </html>

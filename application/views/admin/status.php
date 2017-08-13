@@ -25,7 +25,7 @@
                                         <br>
 										<span class="main-slider__subtitle title-mask"><?php echo $listing[0]['city']; ?>, <?php echo $listing[0]['state']; ?></span>
                                         <br>
-                                        <span class="main-slider__price title-mask">$ <?php echo intval($listing[0]['price']).".00"; ?></span>
+                                        <span id="CurrencyPrice" class="main-slider__price title-mask"></span>
 									</div>
 								</div>
 							</div>
