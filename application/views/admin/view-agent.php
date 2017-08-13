@@ -91,7 +91,8 @@
 																<fieldset>
 																	<div data-row-span="1">
 																		<div data-field-span="1" class="checkbox">
-																			<label><input type="checkbox" name="sms">
+																			<label><input type="checkbox" name="sms" 
+																			<?php if($agent[0]['agent_sms'] == true){ echo "checked"; }else{ echo ""; } ?> />
 																			<span>Send status updates via SMS</span></label>
 																		</div>
 																	</div>

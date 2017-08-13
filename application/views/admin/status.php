@@ -45,7 +45,15 @@
 										<h1 class="main-block__title"><strong><?php echo $agent[0]['agent_name']; ?></strong></h1>
                                         <img src="<?=ASSETS_ADMIN_DIR_USER?><?php echo $agent[0]['agent_pic']; ?>" alt="agent" class="img-responsive main-block__agent-image">
                                         <div class="agent-info">
-                                            <p class="agent-contact"><i class="material-icons">phone</i> <?php echo $agent[0]['agent_cell']; ?></p>
+                                            <p class="agent-contact"><i class="material-icons">phone</i> 
+												<?php 
+													$cell = $agent[0]['agent_cell'];
+													$reg_code = substr($cell, 0, 3);
+													$mid_num = substr($cell, 3, 3);
+													$last_num = substr($cell, 6, 4);
+													echo "(".$reg_code.") ".$mid_num." - ".$last_num;
+												?>
+											</p>
                                             <p class="agent-email"><i class="material-icons">email</i> <a href="mailto:<?php echo $agent_email[0]['email']; ?>"><?php echo $agent_email[0]['email']; ?></a></p>
                                         </div>
 									</div>
@@ -69,7 +77,15 @@
                                         <div class="agent-info">
                                             <h1 class="main-block__title"><strong>Seller</strong></h1>
                                             <p class="agent-contact"><?php echo $seller[0]['seller_name']; ?>,</p>
-                                            <p class="agent-contact"><i class="material-icons">phone</i> <?php echo $seller[0]['seller_cell']; ?></p>
+                                            <p class="agent-contact"><i class="material-icons">phone</i> 
+												<?php 
+													$cell = $seller[0]['seller_cell'];
+													$reg_code = substr($cell, 0, 3);
+													$mid_num = substr($cell, 3, 3);
+													$last_num = substr($cell, 6, 4);
+													echo "(".$reg_code.") ".$mid_num." - ".$last_num;
+												?>
+											</p>
                                             <p class="agent-email"><i class="material-icons">email</i> <a href="mailto:<?php echo $seller_email[0]['email']; ?>"><?php echo $seller_email[0]['email']; ?></a></p>
                                         </div>
 									</div>

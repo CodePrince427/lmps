@@ -137,7 +137,7 @@
 				//Seller Table Data
 				$data_seller_2 = array(
 					'seller_name'		=>	$this->input->post('name'),
-					'seller_cell'		=>	$this->input->post('cell'),
+					'seller_cell'		=>	str_replace(array('(',')', '-'), '' ,$this->input->post('cell')),
 					'seller_sms'		=>	$this->input->post('sms')
 				);
 				
@@ -216,7 +216,7 @@
 				$data_new_seller = array(
 					'seller_id'		=>	$seller_id,
 					'seller_name'	=>	$this->input->post('name'),
-					'seller_cell'	=>	$this->input->post('cell'),
+					'seller_cell'	=>	str_replace(array('(',')', '-'), '' ,$this->input->post('cell')),
 					'seller_sms'	=>	$this->input->post('sms')
 				);
 				$result1 = $this->users_model->add_seller_info($data_new_seller);

@@ -66,10 +66,10 @@
 				
 				$data_agent = array(
 					'agent_name'	=>	$this->input->post('name'),
-					'agent_cell'	=>	$this->input->post('cell'),
+					'agent_cell'	=>	str_replace(array('(',')', '-'), '' ,$this->input->post('cell')),
 					'agent_sms'		=>	$this->input->post('sms')
 				);
-				
+				print_r($data_agent);exit;
 				//Dropzone OR Simple Pic Code
 				if(!empty($_FILES)){
 					$tempFile1 = $_FILES['pic']['tmp_name'];
@@ -140,7 +140,7 @@
 				
 				$data_new_agent = array(
 					'agent_name' => $this->input->post('name'),
-					'agent_cell' => $this->input->post('cell'),
+					'agent_cell' => str_replace(array('(',')', '-'), '' ,$this->input->post('cell')),
 					'agent_sms'	 => $this->input->post('sms')
 				);
 				

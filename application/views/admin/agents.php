@@ -53,7 +53,15 @@
 																	</td>
 																	<td><?php echo $agent_list[$i]['agent_name']; ?></td>
 																	<td><?php echo $agent_list[$i]['email']; ?></td>
-																	<td><?php echo $agent_list[$i]['agent_cell']; ?></td>
+																	<td>
+																		<?php
+																			$cell = $agent_list[$i]['agent_cell'];
+																			$reg_code = substr($cell, 0, 3);
+																			$mid_num = substr($cell, 3, 3);
+																			$last_num = substr($cell, 6, 4);
+																			echo "(".$reg_code.") ".$mid_num." - ".$last_num;
+																		?>
+																	</td>
 																	<td class="actions">
 																		<a href="<?php echo base_url();?>admin/edit_agent/<?php echo $agent_list[$i]['agent_id'];?>" class="btn btn-primary btn-raised btn-sm"><i class="material-icons">edit</i> Edit</a>
 																		<a id="<?php echo $agent_list[$i]['agent_id'];?>" href="#DelModal" class="btn btn-danger btn-raised btn-sm delete-link" data-toggle="modal"><i class="material-icons">delete</i> Delete</a>
