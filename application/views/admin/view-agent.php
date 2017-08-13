@@ -89,6 +89,14 @@
 																	</div>
 																</fieldset>
 																<fieldset>
+																	<div data-row-span="1">
+																		<div data-field-span="1" class="checkbox">
+																			<label><input type="checkbox" name="sms">
+																			<span>Send status updates via SMS</span></label>
+																		</div>
+																	</div>
+																</fieldset>
+																<fieldset>
 																	<button type="submit" class="btn btn-primary btn-raised btn-sm"><i class="material-icons">check</i> Update Agent</a></button>
 																</fieldset>
 															</form>

@@ -194,6 +194,12 @@
 				.dust {
 					padding: 0 15px;
 				}
+				.checkbox label {
+					margin: 0 !important;
+				}
+				.checkbox label:hover {
+					cursor: pointer !important;
+				}
 			</style>
 		</head>
 		
